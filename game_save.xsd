@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="quality_set">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="low|medium|high|ultra"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="aliasing_set">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="FXAA|none"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="directx_set">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Dx10|Dx11|Dx12"/>
+    </xs:restriction>
+  </xs:simpleType>
+    <xs:simpleType name="savename_set">
+      <xs:restriction base="xs:string">
+        <xs:pattern value="screen-id([0-9])*\.png"/>
+      </xs:restriction>
+    </xs:simpleType>
+  <xs:element name="game_root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="game_setup">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="active_resolution">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="horizontal" type="xs:unsignedShort" />
+                    <xs:element name="vertical" type="xs:unsignedShort" />
+                    <xs:element name="frequency" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="graphic_setup">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="textures_quality" type="quality_set" />
+                    <xs:element name="shadows_quality" type="quality_set" />
+                    <xs:element name="water_quality" type="quality_set" />
+                    <xs:element name="LOD_fade_out" type="quality_set" />
+                    <xs:element name="effect_quality" type="quality_set" />
+                    <xs:element name="world_reflections" type="xs:boolean" />
+                    <xs:element name="water_reflections" type="xs:boolean" />
+                    <xs:element name="post_process" type="xs:boolean" />
+                    <xs:element name="complex_scenery" type="xs:boolean" />
+                    <xs:element name="antialiasing" type="aliasing_set" />
+                  </xs:sequence>
+                  <xs:attribute name="directX" type="directx_set" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="key_mapping">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="keyboard">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="key">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="mapped_key" type="xs:string" />
+                                <xs:element name="mapped_to" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="save_game_master">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="save_game">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="saved_game_stats">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="seconds_played" type="xs:unsignedInt" />
+                          <xs:element name="load_count" type="xs:unsignedShort" />
+                          <xs:element name="date" type="xs:date" />
+                          <xs:element name="time" type="xs:time" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="player">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="position">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="x" type="xs:int" />
+                                <xs:element name="y" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="velocity">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="x" type="xs:int" />
+                                <xs:element name="y" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="in_air" type="xs:boolean" />
+                          <xs:element name="in_water" type="xs:boolean" />
+                          <xs:element name="on_ladder" type="xs:boolean" />
+                          <xs:element name="stats">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="level">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="xp" type="xs:unsignedShort" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="health">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedShort">
+                                        <xs:attribute name="poisoned_level" type="xs:unsignedShort" use="required" />
+                                        <xs:attribute name="poison_left" type="xs:unsignedShort" use="required" />
+                                        <xs:attribute name="on_fire_level" type="xs:unsignedShort" use="required" />
+                                        <xs:attribute name="fire_left" type="xs:unsignedShort" use="required" />
+                                        <xs:attribute name="air_left" type="xs:unsignedShort" use="required" />
+                                        <xs:attribute name="rads" type="xs:unsignedShort" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="strenght">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="penalty" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="penalty_left" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="inteligence">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="penalty" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="penalty_left" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="stamina">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="penalty" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="penalty_left" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="endurance">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="penalty" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="penalty_left" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="luck">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:unsignedByte">
+                                        <xs:attribute name="penalty" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="penalty_left" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="inventory">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="item_id">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="amount" type="xs:unsignedShort" />
+                                      <xs:element minOccurs="0" maxOccurs="1" name="modifier_0" type="xs:int" />
+                                      <xs:element minOccurs="0" maxOccurs="1" name="modifier_1" type="xs:int" />
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="enemies">
+                      <xs:complexType mixed="true">
+                        <xs:sequence minOccurs="0">
+                          <xs:element maxOccurs="unbounded" name="enemy">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="position">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="x" type="xs:int" />
+                                      <xs:element name="y" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="velocity">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="x" type="xs:int" />
+                                      <xs:element name="y" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="in_air" type="xs:boolean" />
+                                <xs:element name="in_water" type="xs:boolean" />
+                                <xs:element name="stats">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="level" type="xs:unsignedByte" />
+                                      <xs:element name="health">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:unsignedShort">
+                                              <xs:attribute name="poisoned_level" type="xs:unsignedByte" use="required" />
+                                              <xs:attribute name="poison_left" type="xs:unsignedByte" use="required" />
+                                              <xs:attribute name="on_fire_level" type="xs:unsignedByte" use="required" />
+                                              <xs:attribute name="fire_left" type="xs:unsignedByte" use="required" />
+                                              <xs:attribute name="air_left" type="xs:unsignedByte" use="required" />
+                                              <xs:attribute name="rads" type="xs:unsignedShort" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="strenght">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:unsignedByte">
+                                              <xs:attribute name="penalty" type="xs:short" use="required" />
+                                              <xs:attribute name="penalty_left" type="xs:unsignedShort" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="drops">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="item_id">
+                                              <xs:complexType mixed="true">
+                                                <xs:sequence minOccurs="0">
+                                                  <xs:element name="amount" type="xs:unsignedShort" />
+                                                  <xs:element minOccurs="0" name="modifier_0" type="xs:int"/>
+                                                  <xs:element minOccurs="0" name="modifier_1" type="xs:int" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="monster" type="xs:string" use="required" />
+                              <xs:attribute name="monster_id" type="xs:unsignedShort" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="save_screenshot" type="savename_set" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="orderid" type="xs:unsignedInt" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

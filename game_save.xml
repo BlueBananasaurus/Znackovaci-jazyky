@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game_root orderid="889923"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="game_save.xsd">
+  <game_setup version="8.9.1">
+    <active_resolution>
+      <horizontal>800</horizontal>
+      <vertical>600</vertical>
+      <frequency>70</frequency>
+    </active_resolution>
+    <graphic_setup directX ="Dx10">
+      <textures_quality>medium</textures_quality>
+      <shadows_quality>medium</shadows_quality>
+      <water_quality>medium</water_quality>
+      <LOD_fade_out>medium</LOD_fade_out>
+      <effect_quality>ultra</effect_quality>
+      <world_reflections>false</world_reflections>
+      <water_reflections>true</water_reflections>
+      <post_process>true</post_process>
+      <complex_scenery>true</complex_scenery>
+      <antialiasing>FXAA</antialiasing>
+    </graphic_setup>
+    <key_mapping>
+      <keyboard>
+        <key>
+          <mapped_key>A</mapped_key>
+          <mapped_to>left</mapped_to>
+        </key>
+        <key>
+          <mapped_key>D</mapped_key>
+          <mapped_to>right</mapped_to>
+        </key>
+        <key>
+          <mapped_key>S</mapped_key>
+          <mapped_to>crouch</mapped_to>
+        </key>
+        <key>
+          <mapped_key>Space</mapped_key>
+          <mapped_to>jump</mapped_to>
+        </key>
+      </keyboard>
+    </key_mapping>
+  </game_setup>
+  <save_game_master>
+    <save_game id="1" name="Muj sejf 111" save_screenshot="screen-id1.png">
+      <saved_game_stats>
+        <seconds_played>8876</seconds_played>
+        <load_count>56</load_count>
+        <date>2017-03-15</date>
+        <time>10:30:17</time>
+      </saved_game_stats>
+      <player name="LOL">
+        <position>
+          <x>765</x>
+          <y>986</y>
+        </position>
+        <velocity>
+          <x>0</x>
+          <y>9</y>
+        </velocity>
+        <in_air>false</in_air>
+        <in_water>true</in_water>
+        <on_ladder>false</on_ladder>
+        <stats>
+          <level xp="5675">6</level>
+          <health poisoned_level="0" poison_left="0" on_fire_level="1" fire_left="6" air_left="100" rads="455">89</health>
+          <strenght penalty="0" penalty_left="0">8</strenght>
+          <inteligence penalty="3" penalty_left="16">9</inteligence>
+          <stamina penalty="0" penalty_left="0">8</stamina>
+          <endurance penalty="0" penalty_left="0">5</endurance>
+          <luck penalty="0" penalty_left="0">1</luck>
+        </stats>
+        <inventory>
+          <item_id id="1">
+            <amount>5</amount>
+            <modifier_0>80</modifier_0>
+            <modifier_1>50</modifier_1>
+          </item_id>
+          <item_id id="2">
+            <amount>25</amount>
+            <modifier_1>15112</modifier_1>
+          </item_id>
+          <item_id id="3">
+            <amount>256</amount>
+            <modifier_0>1</modifier_0>
+          </item_id>
+          <item_id id="1000">
+            <amount>50</amount>
+            <modifier_0>0</modifier_0>
+            <modifier_1>0</modifier_1>
+          </item_id>
+        </inventory>
+      </player>
+      <enemies>
+        <enemy monster = "ghoul" monster_id="1">
+          <position>
+            <x>765</x>
+            <y>986</y>
+          </position>
+          <velocity>
+            <x>0</x>
+            <y>9</y>
+          </velocity>
+          <in_air>false</in_air>
+          <in_water>true</in_water>
+          <stats>
+            <level>2</level>
+            <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="455">200</health>
+            <strenght penalty="0" penalty_left="0">12</strenght>
+            <drops>
+              <item_id id="1">
+                <amount>5</amount>
+                <modifier_0>80</modifier_0>
+                <modifier_1>50</modifier_1>
+              </item_id>
+              <item_id id="5">
+                <amount>5</amount>
+                <modifier_0>10</modifier_0>
+              </item_id>
+              <item_id id="256">
+                <amount>5</amount>
+              </item_id>
+            </drops>
+          </stats>
+        </enemy>
+        <enemy monster = "very_evil_monkey" monster_id="2">
+          <position>
+            <x>836</x>
+            <y>873</y>
+          </position>
+          <velocity>
+            <x>89</x>
+            <y>0</y>
+          </velocity>
+          <in_air>true</in_air>
+          <in_water>false</in_water>
+          <stats>
+            <level>24</level>
+            <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="0">1024</health>
+            <strenght penalty="0" penalty_left="0">78</strenght>
+            <drops>
+              <item_id id="666">
+                <amount>666</amount>
+                <modifier_0>0</modifier_0>
+                <modifier_1>5</modifier_1>
+              </item_id>
+            </drops>
+          </stats>
+        </enemy>
+      </enemies>
+    </save_game>
+    <save_game id="2" name="ASDFG" save_screenshot="screen-id2.png">
+      <saved_game_stats>
+        <seconds_played>4155</seconds_played>
+        <load_count>10</load_count>
+        <date>2017-01-15</date>
+        <time>01:10:01</time>
+      </saved_game_stats>
+      <player name="LOL">
+        <position>
+          <x>1024</x>
+          <y>65000</y>
+        </position>
+        <velocity>
+          <x>0</x>
+          <y>0</y>
+        </velocity>
+        <in_air>false</in_air>
+        <in_water>true</in_water>
+        <on_ladder>false</on_ladder>
+        <stats>
+          <level xp="1245">6</level>
+          <health poisoned_level="0" poison_left="0" on_fire_level="1" fire_left="6" air_left="100" rads="455">125</health>
+          <strenght penalty="0" penalty_left="0">1</strenght>
+          <inteligence penalty="3" penalty_left="16">6</inteligence>
+          <stamina penalty="0" penalty_left="0">8</stamina>
+          <endurance penalty="0" penalty_left="0">2</endurance>
+          <luck penalty="0" penalty_left="0">1</luck>
+        </stats>
+        <inventory>
+          <item_id id="16">
+            <amount>5</amount>
+            <modifier_0>10</modifier_0>
+            <modifier_1>500</modifier_1>
+          </item_id>
+          <item_id id="2">
+            <amount>25</amount>
+            <modifier_1>151</modifier_1>
+          </item_id>
+        </inventory>
+      </player>
+      <enemies>
+        <enemy monster = "ghoul" monster_id="1">
+          <position>
+            <x>765</x>
+            <y>986</y>
+          </position>
+          <velocity>
+            <x>0</x>
+            <y>9</y>
+          </velocity>
+          <in_air>false</in_air>
+          <in_water>true</in_water>
+          <stats>
+            <level>2</level>
+            <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="455">200</health>
+            <strenght penalty="0" penalty_left="0">12</strenght>
+            <drops>
+              <item_id id="1">
+                <amount>5</amount>
+                <modifier_0>80</modifier_0>
+                <modifier_1>50</modifier_1>
+              </item_id>
+              <item_id id="5">
+                <amount>5</amount>
+                <modifier_0>10</modifier_0>
+              </item_id>
+              <item_id id="256">
+                <amount>5</amount>
+              </item_id>
+            </drops>
+          </stats>
+        </enemy>
+        <enemy monster = "poor_bear" monster_id="54">
+          <position>
+            <x>-836</x>
+            <y>10025</y>
+          </position>
+          <velocity>
+            <x>24</x>
+            <y>0</y>
+          </velocity>
+          <in_air>true</in_air>
+          <in_water>false</in_water>
+          <stats>
+            <level>24</level>
+            <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="0">1024</health>
+            <strenght penalty="0" penalty_left="0">78</strenght>
+            <drops>
+              <item_id id="12">
+                <amount>5</amount>
+                <modifier_0>145</modifier_0>
+                <modifier_1>789</modifier_1>
+              </item_id>
+            </drops>
+          </stats>
+        </enemy>
+      </enemies>
+    </save_game>
+    <save_game id="3" name="save dalsi" save_screenshot="screen-id3.png">
+      <saved_game_stats>
+        <seconds_played>84555</seconds_played>
+        <load_count>10</load_count>
+        <date>2014-10-31</date>
+        <time>12:34:32</time>
+      </saved_game_stats>
+      <player name="LOL">
+        <position>
+          <x>1024</x>
+          <y>65000</y>
+        </position>
+        <velocity>
+          <x>0</x>
+          <y>0</y>
+        </velocity>
+        <in_air>false</in_air>
+        <in_water>true</in_water>
+        <on_ladder>false</on_ladder>
+        <stats>
+          <level xp="45888">32</level>
+          <health poisoned_level="0" poison_left="0" on_fire_level="1" fire_left="6" air_left="100" rads="455">125</health>
+          <strenght penalty="0" penalty_left="0">1</strenght>
+          <inteligence penalty="0" penalty_left="0">6</inteligence>
+          <stamina penalty="0" penalty_left="0">4</stamina>
+          <endurance penalty="0" penalty_left="0">3</endurance>
+          <luck penalty="0" penalty_left="0">1</luck>
+        </stats>
+        <inventory>
+          <item_id id="16">
+            <amount>5</amount>
+            <modifier_0>10</modifier_0>
+            <modifier_1>500</modifier_1>
+          </item_id>
+          <item_id id="2">
+            <amount>25</amount>
+            <modifier_1>151</modifier_1>
+          </item_id>
+        </inventory>
+      </player>
+      <enemies></enemies>
+    </save_game>
+    <save_game id="4" name="save dalsi" save_screenshot="screen-id4.png">
+      <saved_game_stats>
+        <seconds_played>14455</seconds_played>
+        <load_count>10</load_count>
+        <date>2015-02-12</date>
+        <time>12:34:32</time>
+      </saved_game_stats>
+      <player name="LOL">
+        <position>
+          <x>1024</x>
+          <y>65000</y>
+        </position>
+        <velocity>
+          <x>0</x>
+          <y>0</y>
+        </velocity>
+        <in_air>false</in_air>
+        <in_water>false</in_water>
+        <on_ladder>false</on_ladder>
+        <stats>
+          <level xp="45888">32</level>
+          <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="0">100</health>
+          <strenght penalty="0" penalty_left="0">1</strenght>
+          <inteligence penalty="0" penalty_left="0">4</inteligence>
+          <stamina penalty="0" penalty_left="0">4</stamina>
+          <endurance penalty="0" penalty_left="0">10</endurance>
+          <luck penalty="0" penalty_left="0">10</luck>
+        </stats>
+        <inventory>
+          <item_id id="16">
+            <amount>5</amount>
+            <modifier_0>10</modifier_0>
+            <modifier_1>500</modifier_1>
+          </item_id>
+          <item_id id="2">
+            <amount>25</amount>
+            <modifier_1>151</modifier_1>
+          </item_id>
+        </inventory>
+      </player>
+      <enemies>
+        <enemy monster = "cat" monster_id="2">
+          <position>
+            <x>100</x>
+            <y>-50</y>
+          </position>
+          <velocity>
+            <x>1</x>
+            <y>0</y>
+          </velocity>
+          <in_air>true</in_air>
+          <in_water>false</in_water>
+          <stats>
+            <level>1</level>
+            <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="0" rads="0">25</health>
+            <strenght penalty="0" penalty_left="0">1</strenght>
+            <drops>
+              <item_id id="248">
+                <amount>1</amount>
+                <modifier_0>-1</modifier_0>
+              </item_id>
+            </drops>
+          </stats>
+        </enemy>
+      </enemies>
+    </save_game>
+    <save_game id="5" name="over konecne" save_screenshot="screen-id5.png">
+      <saved_game_stats>
+        <seconds_played>14455</seconds_played>
+        <load_count>10</load_count>
+        <date>2015-02-12</date>
+        <time>12:34:32</time>
+      </saved_game_stats>
+      <player name="LOL">
+        <position>
+          <x>1024</x>
+          <y>65000</y>
+        </position>
+        <velocity>
+          <x>0</x>
+          <y>0</y>
+        </velocity>
+        <in_air>false</in_air>
+        <in_water>false</in_water>
+        <on_ladder>false</on_ladder>
+        <stats>
+          <level xp="45888">32</level>
+          <health poisoned_level="0" poison_left="0" on_fire_level="0" fire_left="0" air_left="100" rads="0">100</health>
+          <strenght penalty="0" penalty_left="0">1</strenght>
+          <inteligence penalty="0" penalty_left="0">4</inteligence>
+          <stamina penalty="0" penalty_left="0">4</stamina>
+          <endurance penalty="0" penalty_left="0">10</endurance>
+          <luck penalty="0" penalty_left="0">10</luck>
+        </stats>
+        <inventory>
+          <item_id id="16">
+            <amount>28</amount>
+            <modifier_0>10</modifier_0>
+            <modifier_1>56</modifier_1>
+          </item_id>
+        </inventory>
+      </player>
+      <enemies>
+      </enemies>
+    </save_game>
+  </save_game_master>
+</game_root>

@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Jakub Krejdl - projekt save hry</title>
+</head>
+<body>
+    <h1>Jakub Krejdl - projekt save hry</h1>
+    <nav>
+        <h2>Navigace</h2>
+        <ul>
+            <li><a href="#uvod">Úvod</a></li>
+            <li><a href="#metodika">Metodika</a></li>
+            <li>
+                <a href="#popis">Popis elementů a atributů</a>
+                <ul>
+                    <li><a href="#elementy">Elementy</a></li>
+                    <li><a href="#atributy">Atributy</a></li>
+                </ul>
+            </li>
+            <li><a href="#transformace">Popis transformace</a></li>
+            <li><a href="#zaver">Závěr</a></li>
+            <li><a href="#autor">Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <header>
+                <a id="uvod"></a>
+                <h2>Úvod</h2>
+                <p>
+                    Zadání je vytvořit nastavení aplikace ve formátu xml s přidruženými soubory jako je schéma xsd,<br>
+                    transformace do JSON nebo html - já si zvolil html výstup.
+                </p>
+            </header>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="metodika"></a>
+                <h2>Metodika</h2>
+                <h3>Použité nástroje</h3>
+                <ul>
+                    <li>Mozzila Firefox</li>
+                    <li>stránky W3 pro validaci</li>
+                    <li>stránky Free Formater pro transformaci do html</li>
+                    <li>Visual studio</li>
+                    <li>Sublime text</li>
+                </ul>
+                <p>
+                    Většina práce probíhala  v Sublime text a Visual studiu 2015.<br>
+                    Nejdřív jsem vytvořil soubor xml, i když by jsem měl začít xsd, ale můj přístup mi přišel jednodušší.<br>
+                    Vytvořil jsemt tedy xml soubor a ve visual studiu vygenetoval xsd a upravil podle svého.<br>
+                    vytvořil jsem soubor xsl ve visual studiu a provedl Transformaci.<br>
+                    Toto html jsem vytvořil v sublime text a testoval zobrazení v Mozzile Firefox. Další prohlížeče nejsou potřeba,<br>
+                    základní HTML5 kód by se měl zobrazovat všude stejně.
+                </p>
+            </header>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="popis"></a>
+                <h2>Popis elementů a atributů</h2>
+                <a id="elementy"></a>
+                <h3>Elementy</h3>
+                <table>
+                    <tr>
+                        <th>Element</th>
+                        <th>Popis</th>
+                        <th>Hodnoty</th>
+                    </tr>
+                    <tr>
+                        <td>game_root</td>
+                        <td>základní kořenový uzel pro save</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>game_setup</td>
+                        <td>základní kořenový uzel pro nastavení hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>active_resolution</td>
+                        <td>aktivní rozlišení ve hře</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>horizontal</td>
+                        <td>horizontální rozlišení</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>vertical</td>
+                        <td>vertikální rozlišení</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>frequency</td>
+                        <td>obnovovací frekvence</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>graphic_setup</td>
+                        <td>základní kořenový uzel pro nastavení grafiky hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>textures_quality</td>
+                        <td>kvalita textur</td>
+                        <td>enumerace (low;medium;high;ultra)</td>
+                    </tr>
+                    <tr>
+                        <td>shadows_quality</td>
+                        <td>kvalita stíhnů</td>
+                        <td>enumerace (low;medium;high;ultra)</td>
+                    </tr>
+                    <tr>
+                        <td>water_quality</td>
+                        <td>kvalita vykreslování vody</td>
+                        <td>enumerace (low;medium;high;ultra)</td>
+                    </tr>
+                    <tr>
+                        <td>LOD_fade_out</td>
+                        <td>LOD</td>
+                        <td>enumerace (low;medium;high;ultra)</td>
+                    </tr>
+                    <tr>
+                        <td>effect_quality</td>
+                        <td>kvalita efektů</td>
+                        <td>enumerace (low;medium;high;ultra)</td>
+                    </tr>
+                    <tr>
+                        <td>world_reflections</td>
+                        <td>kvalita odrazů ve světě</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>water_reflections</td>
+                        <td>kvalita odrazů vodní hladiny</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>post_process</td>
+                        <td>kvalita zpracování grafických dat</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>complex_scenery</td>
+                        <td>úroveň komplexnosti scenérie</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>antialiasing</td>
+                        <td>antialiasing</td>
+                        <td>enumerace (FXAA;none)</td>
+                    </tr>
+                    <tr>
+                        <td>key_mapping</td>
+                        <td>zákaldní uzel pro mapování kláves</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>key</td>
+                        <td>základní uzel pro jednu mapovanou klávesu</td>
+                        <td>neomezený počet výskytů</td>
+                    </tr>
+                    <tr>
+                        <td>keyboard</td>
+                        <td>klávesnice</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>mapped_key</td>
+                        <td>mapovaná klávesa</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>mapped_to</td>
+                        <td>namapováno na akci</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>save_game_master</td>
+                        <td>základní kořenový uzel pro ukládání her</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>saved_game_stats</td>
+                        <td>statistiky uložené hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>seconds_played</td>
+                        <td>jak dlouho byl save dohromady hrán</td>
+                        <td>Uint</td>
+                    </tr>
+                    <tr>
+                        <td>load_count</td>
+                        <td>počet nahrání uložených her</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>datum uložení</td>
+                        <td>datum</td>
+                    </tr>
+                    <tr>
+                        <td>time</td>
+                        <td>čas uložení</td>
+                        <td>čas</td>
+                    </tr>
+                    <tr>
+                        <td>player</td>
+                        <td>jméno hráče</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>position</td>
+                        <td>základní uzel pro pozici na mapě</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>souřadnice na ose x</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>y</td>
+                        <td>souřadnice na ose y</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>zrychlení na ose x</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>y</td>
+                        <td>zrychlení na ose y</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>in_air</td>
+                        <td>je postava ve vzduchu?</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>in_water</td>
+                        <td>je postava ve vodě?</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>on_ladder</td>
+                        <td>je postava na žebříku?</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr>
+                        <td>stats</td>
+                        <td>vlastnosti hráče</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>level</td>
+                        <td>úroveň postavy</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>health</td>
+                        <td>zdraví</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>strenght</td>
+                        <td>síla</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>inteligence</td>
+                        <td>inteligence</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>stamina</td>
+                        <td>výdrž</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>endurance</td>
+                        <td>odolnost</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>luck</td>
+                        <td>štěstí</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>item_id</td>
+                        <td>základní uezl pro jeden item</td>
+                        <td>neomezený počet výskytů</td>
+                    </tr>
+                    <tr>
+                        <td>inventory</td>
+                        <td>inventář hráče</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>modifier_0</td>
+                        <td>modifikátor prom item ve hře - může být cokoli od počtu nábojů po zdraví zbraně</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>modifier_1</td>
+                        <td>druhý modifikátor prom item ve hře - může být cokoli od počtu nábojů po zdraví zbraně</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>enemies</td>
+                        <td>základní kořenový uzel pro nepřátele</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>drops</td>
+                        <td>co z nepřátele po srmti padá za item</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>amount</td>
+                        <td>množství jednoho itemu</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <a id="atributy"></a>
+                <h3>Atributy</h3>
+                <table>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Popis</th>
+                        <th>Hodnoty</th>
+                    </tr>
+                    <tr>
+                        <td>directX</td>
+                        <td>verze DirectX</td>
+                        <td>enumerace (Dx10;Dx11;Dx12)</td>
+                    </tr>
+                    <tr>
+                        <td>version</td>
+                        <td>verze hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>xp</td>
+                        <td>zkušenostní body</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>poisoned_level</td>
+                        <td>úroveň zasažení jedem</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>poison_left</td>
+                        <td>kolik sekund zbývá do neutralizace jedu</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>on_fire_level</td>
+                        <td>úroveň zasažení ohňem</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>fire_left</td>
+                        <td>kolik sekund zbývá do vyhoření ohně</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>air_left</td>
+                        <td>kolik zbývá kyslíku</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>rads</td>
+                        <td>úroveň ozáření</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>penalty</td>
+                        <td>znevýhodnění jedné vlastnosti</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>penalty_left</td>
+                        <td>kolik sekund ještě bude znevýhodnění trvat</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>identifikační číslo itemu</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>monster</td>
+                        <td>jméno npc nepřítele</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>monster_id</td>
+                        <td>id npc nepřítele</td>
+                        <td>ushort</td>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>id uložené hry</td>
+                        <td>Ubyte</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>jméno uložené hry</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>save_sceenshot</td>
+                        <td>jméno uložené screenshotu hry</td>
+                        <td>pattern: screen-id([0-9])*\.png</td>
+                    </tr>
+                </table>
+            </header>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="transformace"></a>
+                <h2>Popis transformace</h2>
+                <p>
+                    Cílem transformace bylo vytvořit seznam uložených her s podseznamy npc. <br>
+                    Transformace byla provedena do html na stránkách <a href="http://www.freeformatter.com/xsl-transformer.html">Free formater</a>.
+                    <br>
+                    Toto řešení jsem zvolit pro možnost vygenerovat html bez dalších programů.<br>
+                    Html výstupu není validní podle <a href="https://validator.w3.org/">Validator W3.</a>
+                </p>
+                <p>
+                    Transformace byla provedena skupinou do sebe zanořených for-each cyklů, které při spuštění vytvořili záhlaví tabulky<br>
+                    a při každém dalším cyklu prošli dalším elementem ve své úrovni. Smozřejmě by se takto dalo vytvořit komplexnější dokument,<br>
+                    ale předmětem transformace není vždy vypsaní všech možných informací. Pro zobrazení všech informací lze otevřít xml soubor s<br>
+                    přidruženým xsd v prohlížeči.
+                </p>
+            </header>
+        </section>
+        <hr />
+        <section>
+            <a id="zaver"></a>
+            <header>
+                <h2>Závěr</h2>
+                <p>
+                    Cílem bylo vytvořit save hry - nastavení aplikace podle zadání.<br>
+                    To se podle mého podařilo i když jsem zvolil opačný postup a vygeneroval xsd z xml dokumentu.
+                </p>
+            </header>
+        </section>
+    </main>
+    <footer>
+        <a id="autor"></a>
+        <p>Autorem je Jakub Krejdl. Vytvořeno roku 2017 na PEF ČZU na předmět Značkovací jazyky.</p>
+    </footer>
+</body>
+</html>
